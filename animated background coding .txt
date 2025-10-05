@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background Slideshow</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+
+    /* Slideshow container */
+    .slideshow {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+    }
+
+    .slideshow div {
+      position: absolute;
+      width: 100%; height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      animation: fade 15s infinite;
+    }
+
+    .slideshow div:nth-child(1) {
+      background-image: url("https://picsum.photos/id/1018/1920/1080");
+      animation-delay: 0s;
+    }
+    .slideshow div:nth-child(2) {
+      background-image: url("https://picsum.photos/id/1015/1920/1080");
+      animation-delay: 5s;
+    }
+    .slideshow div:nth-child(3) {
+      background-image: url("https://picsum.photos/id/1016/1920/1080");
+      animation-delay: 10s;
+    }
+
+    @keyframes fade {
+      0%   { opacity: 0; }
+      10%  { opacity: 1; }
+      30%  { opacity: 1; }
+      40%  { opacity: 0; }
+      100% { opacity: 0; }
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="slideshow">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <h1>🌟 SwiftCart Background Slideshow</h1>
+</body>
+</html>
