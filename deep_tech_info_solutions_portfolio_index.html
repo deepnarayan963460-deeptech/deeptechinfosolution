@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DEEP TECH INFO. & SOLUTIONS — Web Developer</title>
+  <meta name="description" content="DEEP TECH INFO. & SOLUTIONS — Web developer building modern, responsive websites for shops, schools, showrooms and offices." />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --glass: rgba(255,255,255,0.06);
+      --accent1: #7b2ff7; /* purple */
+      --accent2: #ff416c; /* pink */
+      --accent3: #00d2ff; /* cyan */
+      --text-light: #e6eef8;
+      --muted: #99a3b3;
+      --radius: 14px;
+      --container: 1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:var(--text-light);background:linear-gradient(180deg,#020617 0%, #071029 100%);-webkit-font-smoothing:antialiased}
+    .wrap{max-width:var(--container);margin:0 auto;padding:28px}
+
+    /* Header / Nav */
+    header{position:sticky;top:18px;z-index:40}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:10px 16px;border-radius:12px;background:linear-gradient(90deg, rgba(123,47,247,0.12), rgba(255,65,108,0.06));backdrop-filter: blur(6px);}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;color:white;font-size:16px;box-shadow:0 6px 18px rgba(123,47,247,0.15)}
+    .brand h1{font-size:16px;margin:0}
+    .brand p{margin:0;font-size:12px;color:var(--muted)}
+    nav ul{display:flex;gap:16px;align-items:center;margin:0;padding:0;list-style:none}
+    nav a{color:var(--text-light);text-decoration:none;font-weight:600;font-size:14px;padding:8px 12px;border-radius:10px;}
+    nav a:hover{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;transform:translateY(-2px)}
+    .cta{display:inline-block;padding:8px 14px;border-radius:12px;background:linear-gradient(90deg,var(--accent2),var(--accent3));font-weight:700}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:60px 0}
+    .hero_card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:32px;border-radius:18px;box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+    .kicker{display:inline-block;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;font-weight:700;font-size:12px;margin-bottom:18px}
+    h2{font-size:32px;margin:0 0 12px 0;line-height:1.05}
+    p.lead{color:var(--muted);margin:0 0 18px}
+    .actions{display:flex;gap:12px;margin-top:18px}
+
+    /* Quick cards */
+    .quick{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:14px;border-radius:12px}
+    .card h3{margin:0;font-size:14px}
+    .card p{margin:6px 0 0;color:var(--muted);font-size:13px}
+
+    /* Right column: demo mockup */
+    .mock{border-radius:14px;padding:18px;background:linear-gradient(180deg, rgba(0,0,0,0.18), rgba(255,255,255,0.02));box-shadow:0 10px 40px rgba(2,6,23,0.6)}
+    .mock img{width:100%;border-radius:8px;display:block}
+
+    /* Services / Portfolio */
+    section{padding:60px 0}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:14px}
+    .service h4{margin:0 0 8px}
+    .service p{margin:0;color:var(--muted);font-size:14px}
+
+    /* Contact */
+    .contact_box{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:22px;border-radius:14px;background:linear-gradient(90deg, rgba(0,210,255,0.03), rgba(123,47,247,0.03));}
+    .input, textarea{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text-light);resize:vertical}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:700}
+    .btn-primary{background:linear-gradient(90deg,var(--accent2),var(--accent3));color:white}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text-light)}
+
+    footer{padding:28px 0;color:var(--muted);font-size:13px}
+
+    /* Responsive */
+    @media (max-width:1000px){
+      .hero{grid-template-columns:1fr;}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .wrap{padding:20px}
+    }
+    @media (max-width:640px){
+      nav ul{display:none}
+      .nav{padding:12px}
+      .grid{grid-template-columns:1fr}
+      .contact_box{grid-template-columns:1fr}
+    }
+
+    /* small helper */
+    .muted{color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="nav">
+        <div class="brand">
+          <div class="logo">DT</div>
+          <div>
+            <h1>DEEP TECH INFO. &amp; SOLUTIONS</h1>
+            <p class="muted">Web Developer</p>
+          </div>
+        </div>
+
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a class="cta" href="#contact">Hire Me</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="hero_card">
+          <span class="kicker">I build websites that sell</span>
+          <h2>Modern, responsive websites for shops, schools, showrooms and offices.</h2>
+          <p class="lead">I am a skilled web developer creating attractive and functional websites and web applications that help small businesses look professional online and sell more.</p>
+
+          <div class="actions">
+            <a class="btn btn-primary" href="mailto:deepnarayan963460@gmail.com">Email Me</a>
+            <a class="btn btn-ghost" href="https://wa.me/9179948298369" target="_blank" rel="noreferrer">WhatsApp</a>
+          </div>
+
+          <div class="quick">
+            <div class="card">
+              <h3>Fast Turnaround</h3>
+              <p>Launch-ready websites in 2–7 days depending on features.</p>
+            </div>
+            <div class="card">
+              <h3>Affordable Pricing</h3>
+              <p>Small-business friendly packages &amp; maintenance plans.</p>
+            </div>
+            <div class="card">
+              <h3>Responsive</h3>
+              <p>Designed to look great on mobile, tablet and desktop.</p>
+            </div>
+            <div class="card">
+              <h3>SEO-friendly</h3>
+              <p>Basic on-page SEO and performance optimizations included.</p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="mock">
+          <img src="https://images.unsplash.com/photo-1526378728359-8f0b07b3e8c9?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=example" alt="website mockup" />
+        </aside>
+      </section>
+
+      <section id="services">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px;">
+          <div>
+            <h3 style="margin:0">Services I Offer</h3>
+            <p class="muted" style="margin:6px 0 0">Websites, templates, maintenance and small web apps</p>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="service">
+            <h4>Business Websites</h4>
+            <p>Shops, showrooms, offices and small businesses — attractive landing pages and multi-page sites.</p>
+          </div>
+          <div class="service">
+            <h4>School &amp; Institution Sites</h4>
+            <p>Information portals, admission pages and event pages with forms.</p>
+          </div>
+          <div class="service">
+            <h4>E-commerce &amp; Catalogs</h4>
+            <p>Small catalog stores, product pages and payment integration guidance.</p>
+          </div>
+          <div class="service">
+            <h4>Maintenance &amp; Support</h4>
+            <p>Monthly updates, backups, and quick fixes so your site stays healthy.</p>
+          </div>
+          <div class="service">
+            <h4>Custom Web Apps</h4>
+            <p>Simple CRUD apps and admin dashboards tailored to business needs.</p>
+          </div>
+          <div class="service">
+            <h4>Template Resells</h4>
+            <p>Ready-to-sell templates you can brand and deploy fast.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px;">
+          <div>
+            <h3 style="margin:0">Portfolio &amp; Demos</h3>
+            <p class="muted" style="margin:6px 0 0">A few demo screenshots and template examples you can buy.</p>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="service">
+            <h4>Shop Template</h4>
+            <p>Product listing, cart demo, and checkout guidance. Perfect for small retailers.</p>
+          </div>
+          <div class="service">
+            <h4>School Site</h4>
+            <p>Admissions, events, and noticeboard pages — easy to update.</p>
+          </div>
+          <div class="service">
+            <h4>Showroom Landing</h4>
+            <p>High-impact visuals and contact call-to-action for local showrooms.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px;">
+          <div>
+            <h3 style="margin:0">Get in touch</h3>
+            <p class="muted" style="margin:6px 0 0">WhatsApp or email me to discuss a project.</p>
+          </div>
+        </div>
+
+        <div class="contact_box">
+          <div>
+            <h4 style="margin-top:0">Contact Info</h4>
+            <p style="margin:8px 0">WhatsApp: <a href="https://wa.me/9179948298369" target="_blank" rel="noreferrer">+91 97948 298369</a></p>
+            <p style="margin:8px 0">Email: <a href="mailto:deepnarayan963460@gmail.com">deepnarayan963460@gmail.com</a></p>
+
+            <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+              <a class="btn btn-primary" href="https://wa.me/9179948298369" target="_blank" rel="noreferrer">Message on WhatsApp</a>
+              <a class="btn btn-ghost" href="mailto:deepnarayan963460@gmail.com">Send Email</a>
+            </div>
+          </div>
+
+          <div>
+            <form onsubmit="event.preventDefault(); alert('Thanks! I will contact you soon. (This is a demo form)');" aria-label="Contact form">
+              <label class="muted">Your name</label>
+              <input class="input" type="text" placeholder="Your name" required>
+              <label class="muted" style="margin-top:10px;display:block">Message</label>
+              <textarea rows="5" placeholder="Tell me about the project" required></textarea>
+              <div style="margin-top:12px;display:flex;gap:10px">
+                <button class="btn btn-primary" type="submit">Send Message</button>
+                <button class="btn btn-ghost" type="reset">Clear</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>© <strong>DEEP TECH INFO. &amp; SOLUTIONS</strong> — Web Developer</div>
+        <div class="muted">Made with ❤️ • WhatsApp: +91 97948 298369 • deepnarayan963460@gmail.com</div>
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>
