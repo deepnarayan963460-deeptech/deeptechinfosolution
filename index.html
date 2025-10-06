@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Simple Shop</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 15px;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+    .product {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      margin: 10px;
+      padding: 15px;
+      width: 200px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .product img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .product h3 {
+      margin: 10px 0 5px;
+    }
+    .price {
+      color: green;
+      font-weight: bold;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🛍️ My Simple Shop</h1>
+  </header>
+
+  <div class="container">
+    <div class="product">
+      <img src="https://via.placeholder.com/150" alt="Product 1">
+      <h3>Product 1</h3>
+      <p class="price">$10.00</p>
+      <button>Buy Now</button>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/150" alt="Product 2">
+      <h3>Product 2</h3>
+      <p class="price">$15.00</p>
+      <button>Buy Now</button>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/150" alt="Product 3">
+      <h3>Product 3</h3>
+      <p class="price">$20.00</p>
+      <button>Buy Now</button>
+    </div>
+  </div>
+</body>
+</html>
